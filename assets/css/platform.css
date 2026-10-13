@@ -1,0 +1,86 @@
+/* Platform / case-study components layered on top of the Weasley theme */
+
+.home-section .home-intro .btn-bar { display: flex; flex-wrap: wrap; gap: 28px; align-items: center; }
+.home-section .home-intro .hs-exp { flex-wrap: wrap; row-gap: 20px; }
+.home-section .home-intro .hs-exp .exp-box { padding-right: 22px; }
+.home-section .home-intro .hs-exp .exp-box + .exp-box { padding-left: 22px; }
+.home-section .home-intro .hs-exp h5 { font-size: 32px; margin-bottom: 4px; white-space: nowrap; }
+.home-section .home-intro .hs-exp span { font-size: 12px; letter-spacing: 1.5px; display: block; max-width: 130px; line-height: 1.5; }
+@media (max-width: 767px) {
+  .home-section .home-intro .hs-exp .exp-box { padding-right: 20px; }
+  .home-section .home-intro .hs-exp .exp-box + .exp-box { padding-left: 20px; }
+  .home-section .home-intro .hs-exp h5 { font-size: 28px; }
+}
+
+.about-text h3 { color: var(--primary-color); }
+.about-text .about-row + .about-row { margin-top: 45px; }
+.about-text .lead-line { font-size: 17px; font-weight: 400; color: var(--primary-color); }
+
+/* Architect / Builder / Operator */
+.modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 10px; }
+@media (max-width: 991px) { .modes { grid-template-columns: 1fr; } }
+.mode { border: 1px solid var(--values-border); background: var(--values-bg); border-radius: 12px; padding: 16px 18px; }
+.mode h5 { color: var(--primary-color); font-size: 16px; margin-bottom: 6px; }
+.mode p { font-size: 14px; margin: 0; line-height: 1.6; }
+
+/* Pipeline diagram */
+.pipeline { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; align-items: stretch; }
+.stage { position: relative; border: 1px solid var(--values-border); background: var(--values-bg); border-radius: 12px; padding: 16px 14px; margin-right: 22px; }
+.stage:last-child { margin-right: 0; }
+.stage:not(:last-child)::after { content: ""; position: absolute; right: -17px; top: 50%; width: 12px; height: 12px; border-top: 2px solid #c471ed; border-right: 2px solid #c471ed; transform: translateY(-50%) rotate(45deg); }
+.stage .n { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; opacity: .7; }
+.stage h5 { color: var(--primary-color); font-size: 16px; margin: 4px 0 10px; }
+.stage ul { list-style: none; padding: 0; margin: 0; font-size: 13px; line-height: 1.5; }
+.stage li + li { margin-top: 5px; }
+@media (max-width: 1199px) {
+  .pipeline { grid-template-columns: repeat(3, 1fr); row-gap: 22px; }
+  .stage:nth-child(3n) { margin-right: 0; }
+  .stage:nth-child(3n)::after { display: none; }
+}
+@media (max-width: 767px) {
+  .pipeline { grid-template-columns: 1fr; row-gap: 26px; }
+  .stage { margin-right: 0; }
+  .stage:not(:last-child)::after { display: block; right: auto; left: 50%; top: auto; bottom: -19px; transform: translateX(-50%) rotate(135deg); }
+}
+.rails { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; }
+@media (max-width: 991px) { .rails { grid-template-columns: 1fr; } }
+.rail { border-radius: 12px; padding: 16px 18px; border: 1px solid var(--values-border); background: var(--values-bg); position: relative; overflow: hidden; }
+.rail::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background-image: linear-gradient(to bottom, #12c2e9, #c471ed, #f64f59); }
+.rail h5 { color: var(--primary-color); font-size: 15px; margin-bottom: 6px; }
+.rail p { font-size: 14px; margin: 0; line-height: 1.6; }
+
+/* Case studies */
+.cases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+@media (max-width: 991px) { .cases { grid-template-columns: 1fr; } }
+.case { border: 1px solid var(--values-border); background: var(--values-bg); border-radius: 14px; padding: 24px 26px; -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px); }
+.case .tag { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
+.case h4 { color: var(--primary-color); font-size: 20px; margin: 6px 0 14px; }
+.case dl { margin: 0; font-size: 14px; line-height: 1.6; }
+.case dt { color: var(--primary-color); font-weight: 500; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; margin-top: 10px; }
+.case dd { margin: 2px 0 0; }
+.case .result { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--values-border); color: var(--primary-color); font-weight: 400; font-size: 14px; }
+
+/* Experience */
+.job-entry h3 { color: var(--primary-color); }
+.job-entry .meta { margin-bottom: .75rem; }
+.job-entry h5 { color: var(--primary-color); font-size: 15px; margin: 1.1rem 0 .4rem; }
+.job-entry ul { font-size: 15px; line-height: 1.65; padding-left: 1.1rem; margin: 0; }
+.job-entry li::marker { color: #c471ed; }
+.job-entry li + li { margin-top: 4px; }
+.job-entry b { font-weight: 500; color: var(--primary-color); }
+
+/* Skills chips */
+.skill-groups { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 30px; margin-top: 40px; }
+@media (max-width: 767px) { .skill-groups { grid-template-columns: 1fr; } }
+.skill-groups h5 { color: var(--primary-color); font-size: 15px; margin-bottom: 10px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips span { font-size: 13px; padding: 4px 10px; border-radius: 30px; border: 1px solid var(--values-border); background: var(--values-bg); }
+.expertise { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 991px) { .expertise { grid-template-columns: 1fr; } }
+.expertise .feature-box-02 { height: 100%; }
+.expertise .feature-box-02 h5 { margin-bottom: 8px; }
+
+.cta-box { border: 1px solid var(--values-border); background: var(--values-bg); border-radius: 14px; padding: 26px 30px; text-align: center; }
+.cta-box h4 { color: var(--primary-color); font-size: 22px; margin-bottom: 8px; }
+.cta-box p { margin: 0 auto; max-width: 720px; }
+.contact-name a { color: inherit; }
