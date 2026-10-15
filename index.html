@@ -84,12 +84,12 @@
                                     <span>log sources integrated</span>
                                 </div>
                                 <div class="exp-box">
-                                    <h5>~95%</h5>
-                                    <span>MITRE ATT&amp;CK coverage</span>
+                                    <h5>~200</h5>
+                                    <span>custom detections as code</span>
                                 </div>
                                 <div class="exp-box">
-                                    <h5>2–5 min</h5>
-                                    <span>to first triage, down from 15–40</span>
+                                    <h5>Minutes</h5>
+                                    <span>to first triage, not tens of minutes</span>
                                 </div>
                             </div>
                             <div class="btn-bar">
@@ -128,7 +128,7 @@
                             <div class="about-row" id="biography">
                                 <h3>Profile</h3>
                                 <p class="lead-line">Security platform engineer who designs and owns detection &amp; response platforms end to end, from log collection and enrichment through SIEM and detection-as-code to SOAR with AI-assisted triage.</p>
-                                <p>I've spent 4 years in security operations. I started in a 24/7 SOC handling incidents from single endpoint alerts to multi-stage attacks. Since 2025 I've owned the security monitoring and automation platform at a globally regulated fintech with 1,500+ employees. The platform serves a ~30-person security team. Because I came from the SOC, I build what analysts actually need. Because I work in a regulated environment, I know what has to be logged, how long it has to be kept and how to prove it to an auditor.</p>
+                                <p>I've spent 4 years in security operations. I started in a 24/7 SOC handling incidents from single endpoint alerts to multi-stage attacks. Since 2025 I've owned the security monitoring and automation platform at a globally regulated fintech with 1,500+ employees. Because I came from the SOC, I build what analysts actually need. Because I work in a regulated environment, I know what has to be logged, how long it has to be kept and how to prove it to an auditor.</p>
                                 <p>I work at the architecture and roadmap level: design docs, build-vs-buy decisions, alignment with SOC, IT, engineering, compliance and business owners. When a project needs it, I personally ship the connector, detection rule or playbook that gets it live. Based in Warsaw, Poland, working remotely. Russian native, English C1, Polish basic.</p>
                             </div>
                             <div class="about-row">
@@ -218,7 +218,7 @@
                             <li>Detection-as-code with review and tests</li>
                             <li>Automated rule deployment</li>
                             <li>Behavioral analytics with baselines</li>
-                            <li>~200 custom detections, ~95% ATT&amp;CK</li>
+                            <li>~200 custom detections, ATT&amp;CK-mapped</li>
                         </ul>
                     </div>
                     <div class="stage">
@@ -268,7 +268,7 @@
                     <div class="col-lg-8 text-center">
                         <h6><span class="text-theme">Case Studies</span></h6>
                         <h3>Selected work</h3>
-                        <p>Anonymized, production systems. Figures are conservative estimates from internal ticket data.</p>
+                        <p>Anonymized production systems.</p>
                     </div>
                 </div>
                 <div class="cases">
@@ -299,11 +299,11 @@
                         <h4>Self-improving AI triage</h4>
                         <dl>
                             <dt>Challenge</dt>
-                            <dd>Analysts spent the first 15–40 minutes of every alert gathering context by hand.</dd>
+                            <dd>Analysts spent the first tens of minutes of every alert gathering context by hand.</dd>
                             <dt>Approach</dt>
                             <dd>AI agents with read access to the SIEM and case data post an enriched first verdict and follow up on new comments. Analyst decisions become feedback, and the system periodically proposes prompt improvements for review.</dd>
                         </dl>
-                        <div class="result">First triage in 2–5 minutes, with an estimated 30–50% less analyst time per alert. Agents cannot change their own behaviour; every change is human-reviewed.</div>
+                        <div class="result">First triage within minutes and substantially less analyst time per alert. Agents cannot change their own behaviour; every change is human-reviewed.</div>
                     </div>
                     <div class="case">
                         <span class="tag text-theme">DLP · Automation</span>
@@ -314,7 +314,7 @@
                             <dt>Approach</dt>
                             <dd>A detection flags the exposure, then an LLM checks whether the content is a real secret. False positives close automatically. For real hits, the employee is notified directly and the case escalates if needed.</dd>
                         </dl>
-                        <div class="result">73% of the alert class was auto-closed on the first day in production.</div>
+                        <div class="result">The majority of the alert class was auto-closed from the first day in production.</div>
                     </div>
                     <div class="case">
                         <span class="tag text-theme">Guardrails</span>
@@ -325,7 +325,7 @@
                             <dt>Approach</dt>
                             <dd>AI proposes the verdict, but closure requires an independent fact: a matching access approval, a privileged-access session record or verified content. Each alert class runs in shadow mode before it goes live.</dd>
                         </dl>
-                        <div class="result">50–75% auto-closure in covered classes, with a full audit trail in every ticket.</div>
+                        <div class="result">Most alerts in covered classes close automatically, with a full audit trail in every ticket.</div>
                     </div>
                     <div class="case">
                         <span class="tag text-theme">Insider risk</span>
@@ -357,7 +357,7 @@
                         <div class="job-entry" style="margin-bottom: 3rem;">
                             <h3 style="font-size: 1.35em; margin-bottom: 0.3rem;">Security Engineer · SIEM / SOAR Platform Owner</h3>
                             <p class="meta"><strong>Capital.com</strong> – <em>January 2025 – Present</em></p>
-                            <p>Owner of the security monitoring and response platform at a global, multi-regulated fintech (1,500+ employees). The platform serves a ~30-person security team. I own its architecture, roadmap, delivery and stakeholder alignment.</p>
+                            <p>Owner of the security monitoring and response platform at a global, multi-regulated fintech (1,500+ employees), used by the whole security function. I own its architecture, roadmap, delivery and stakeholder alignment.</p>
 
                             <h5>Platform architecture &amp; ownership</h5>
                             <ul>
@@ -376,14 +376,14 @@
                             <h5>Detection engineering</h5>
                             <ul>
                                 <li>Introduced <b>detection-as-code</b>, the pipeline behind a library of <b>~200 custom detections</b>, each backed by a SOAR playbook: Sigma rules in Git, review, automated tests and CI/CD deployment. Every new rule automatically gets a ticket, dedup, severity and AI triage. Behavioral scorers with baselines cover logic that rules can't express.</li>
-                                <li>Reached <b>~95% MITRE ATT&amp;CK coverage</b> of techniques relevant to company infrastructure, validated in annual Atomic Red Team simulations.</li>
+                                <li>Drove <b>broad MITRE ATT&amp;CK coverage</b> of techniques relevant to company infrastructure, validated in annual Atomic Red Team simulations.</li>
                                 <li>Rolled out host telemetry and vulnerability detection across the fleet with Ansible. Evaluated Linux and Kubernetes telemetry down to the syscall level and defined CIS-aligned hardening requirements.</li>
                             </ul>
 
                             <h5>SOAR &amp; AI-assisted response</h5>
                             <ul>
-                                <li>Built <b>LLM triage agents</b> with tool access to SIEM and case data. The first enriched verdict now arrives in <b>2–5 min instead of <span style="white-space:nowrap">15–40</span></b>, and analyst time per alert is down an estimated 30–50%.</li>
-                                <li>Designed <b>guardrailed auto-closure</b>: an alert closes only on an independent fact (access approval, privileged-access session record, verified content). Each class runs in shadow mode first, and every action is visible in the ticket. Result: <b>50–75% auto-closure</b> in covered classes, including 73% of DLP secret-exposure alerts on day one.</li>
+                                <li>Built <b>LLM triage agents</b> with tool access to SIEM and case data. The first enriched verdict now arrives <b>within minutes instead of tens of minutes</b>, and analysts spend substantially less time per alert.</li>
+                                <li>Designed <b>guardrailed auto-closure</b>: an alert closes only on an independent fact (access approval, privileged-access session record, verified content). Each class runs in shadow mode first, and every action is visible in the ticket. Result: <b>most alerts in covered classes close automatically</b>, including the majority of DLP secret-exposure alerts from day one.</li>
                                 <li>Built a <b>self-improving triage loop</b>: analyst decisions become feedback, the system proposes prompt changes, and humans approve them through review.</li>
                             </ul>
 
